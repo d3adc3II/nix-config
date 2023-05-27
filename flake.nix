@@ -33,25 +33,25 @@
       # The `nixpkgs.lib.nixosSystem` function is used to build this configuration, the following attribute set is its parameter.
       # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system
       # Test Config machine
-      nixos-test = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [
-          ./configuration.nix
-        ];
-      };
+     # nixos-test = nixpkgs.lib.nixosSystem {
+     #   system = "x86_64-linux";
+     #   specialArgs = inputs;
+     #   modules = [
+     #     ./configuration.nix
+     #   ];
+     # };
       # Main nixos config
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./configuration.nix
+          ./hosts/d3nixpc
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.d3 = import ./home.nix;
-            #home-manager.extraSpecialArgs = inputs;          
+            home-manager.users.d3 = import .home/x11.nix;
+            home-manager.extraSpecialArgs = inputs;          
           }
         ];
       };
