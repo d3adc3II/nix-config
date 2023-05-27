@@ -31,6 +31,11 @@
     enable = true;
     userName = "d3adc3II";
     userEmail = "ph0ngdinh@proton.com";
+    aliases = {
+      ci = "commit";
+      co = "checkout";
+      s = "status";
+    };
   };
 
   # Packages that should be installed to the user profile.
