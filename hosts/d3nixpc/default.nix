@@ -15,7 +15,7 @@
   networking = {
     hostName = "d3nixpc"; # Define your hostname.
     wireless.enable = false;
-    networkmanager = true;
+    networkmanager.enable = true;
   };
   # Nvidia GPU
   services.xserver.enable = true;
