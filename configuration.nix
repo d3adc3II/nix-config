@@ -113,7 +113,7 @@
     cachix
     # install helix from flake input `helix`
     helix.packages."${pkgs.system}".helix
-
+    gitAndTools.gitFull
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
