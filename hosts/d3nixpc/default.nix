@@ -4,7 +4,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./core-desktop.nix
-      ./user_group.nix
+      ./user-group.nix
     ];
 
   # Bootloader.
