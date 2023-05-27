@@ -50,7 +50,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.d3 = import .home/x11.nix;
+            home-manager.users.d3 = import ./home/x11.nix;
             home-manager.extraSpecialArgs = inputs;          
           }
         ];
