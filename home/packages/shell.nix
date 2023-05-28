@@ -29,6 +29,9 @@
       theme = "superjarin";
       plugins = [
         "direnv"
+        "zsh-autosuggestion"
+        "zoxide"
+        "thefuck"
       ];
     };
     #plugins = [
@@ -40,7 +43,9 @@
     ll = "ls -l";
     update = "sudo nixos-rebuild switch";
     gac = "git add . && git commit -m";
-    gp = "git push origin";
+    gp = "git push origin v0.0.2";
+    tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
   #home.file.".config/oh-my-zsh/themes/af-no-magic.zsh-theme".source = ./af-no-magic.zsh-theme;
   };
   history = {
