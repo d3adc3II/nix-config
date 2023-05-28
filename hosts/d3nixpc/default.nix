@@ -6,8 +6,6 @@
     ./core-desktop.nix
     ./user-group.nix
   ];
-  home.username = "d3";
-  home.homeDirectory = "/home/d3";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
