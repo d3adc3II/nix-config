@@ -30,11 +30,13 @@
 
   # Fcitx5
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-gtk
-    ];
+  #  enabled = "fcitx5";
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+    #fcitx5.addons = with pkgs; [
+    #    fcitx5-mozc
+    #    fcitx5-gtk
+    #];
 };
 
   # Configure keymap in X11
