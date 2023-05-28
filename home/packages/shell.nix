@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, helix ... }:
 {
 
   # Packages that should be installed to the user profile.
