@@ -50,6 +50,11 @@
     helix.packages."${pkgs.system}".helix
   #  gitAndTools.gitFull
   ];
+
+  # Shell configuations
+  environment.shell = with pkgs; [
+    zsh
+  ];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }

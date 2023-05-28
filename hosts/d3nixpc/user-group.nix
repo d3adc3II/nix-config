@@ -7,6 +7,7 @@
     isNormalUser = true;
     description = "d3";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
 }
