@@ -52,7 +52,7 @@
   ];
 
   # Shell configuations
-  environment.shell = with pkgs; [
+  environment.shells = with pkgs; [
     zsh
   ];
   # Allow unfree packages
