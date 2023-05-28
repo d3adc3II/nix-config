@@ -32,7 +32,7 @@
       theme = "superjarin";
       plugins = [
         "direnv"
-        "zsh-autosuggestion"
+        "zsh-autosuggestions"
         "zoxide"
         "thefuck"
       ];
