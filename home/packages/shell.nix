@@ -18,7 +18,7 @@
     #fcitx5-with-addons
     fcitx5-unikey
     thefuck
-    zsh-autosuggestion
+    zsh-autosuggestions
     zoxide
   ];
   #programs.zsh.zplug.enable =  true;
