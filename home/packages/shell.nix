@@ -16,6 +16,7 @@
     zplug
     oh-my-zsh
     #fcitx5-with-addons
+    fcitx5-unikey
   ];
   #programs.zsh.zplug.enable =  true;
   #:wprograms.zsh.zsh-powerlevel10k.enable =  true;
