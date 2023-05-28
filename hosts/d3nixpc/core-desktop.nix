@@ -39,6 +39,17 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim 
+    wget
+    git
+    cachix
+  # install helix from flake input `helix`
+    helix.packages."${pkgs.system}".helix
+  #  gitAndTools.gitFull
+  ];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }
