@@ -51,10 +51,6 @@
   #  gitAndTools.gitFull
   ];
 
-  # Shell configuations
-  environment.shells = with pkgs; [
-    zsh
-  ];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }

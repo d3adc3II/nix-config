@@ -47,7 +47,10 @@
   };
 };
 
-
+  # Shell configuations
+  environment.shells = with pkgs; [
+    zsh
+  ];
 
 
 }
