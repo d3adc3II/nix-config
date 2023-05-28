@@ -20,6 +20,11 @@
     LC_TIME = "en_SG.UTF-8";
   };
 
+  # set cursor size and dpi for 4k monitor
+  xresources.properties = {
+    "Xcursor.size" = 16;
+    "Xft.dpi" = 172;
+  };
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

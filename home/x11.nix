@@ -20,12 +20,6 @@
   #     xxx
   # '';
 
-  # set cursor size and dpi for 4k monitor
-  xresources.properties = {
-    "Xcursor.size" = 16;
-    "Xft.dpi" = 172;
-  };
-
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
@@ -38,13 +32,6 @@
     };
   };
 
-  # Packages that should be installed to the user profile.
-  home.packages = [ 
-    pkgs.htop
-    pkgs.btop
-    pkgs.kitty
-    pkgs.brave
-  ];
 
   # enable starship, a beautiful shell prompt
   #programs.starship = {

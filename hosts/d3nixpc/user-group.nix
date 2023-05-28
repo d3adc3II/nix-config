@@ -7,12 +7,6 @@
     isNormalUser = true;
     description = "d3";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kate
-      vscode
-    #  thunderbird
-    ];
   };
 
 }
