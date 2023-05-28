@@ -5,7 +5,7 @@
     ./packages/shell.nix
 
 
-  ]
+  ];
   # please change the username & home direcotry to your own
   home.username = "d3";
   home.homeDirectory = "/home/d3";
