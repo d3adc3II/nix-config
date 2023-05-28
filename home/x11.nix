@@ -56,7 +56,7 @@ programs.bash.shellAliases = {
   ls = "ls --color=tty";
 };
 
-  # enable starship, a beautiful shell prompt
+  # enable starship, a beautiful shell prompt for reference.
   #programs.starship = {
   #  enable = true;
   #  settings = {
