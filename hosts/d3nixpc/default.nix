@@ -1,11 +1,13 @@
-{ config, pkgs, helix, ... } @args:
-  {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./core-desktop.nix
-      ./user-group.nix
-    ];
+{ config, pkgs, helix, ... }:
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./core-desktop.nix
+    ./user-group.nix
+  ];
+  home.username = "d3";
+  home.homeDirectory = "/home/d3";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -37,5 +39,8 @@
 
 
   system.stateVersion = "22.11"; # Did you read the comment?
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
   }

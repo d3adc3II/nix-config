@@ -25,23 +25,24 @@
   # However, `self` is an exception, This special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
   #outputs = { self, nixpkgs, ... }@inputs: {
+  # By default, NixOS will try to refer the nixosConfiguration with its hostname.
+  # so the system named `nixos-test` will use this configuration.
+  # However, the configuration name can also be specified using `sudo nixos-rebuild switch --flake /path/to/flakes/directory#<name>`.
+  # The `nixpkgs.lib.nixosSystem` function is used to build this configuration, the following attribute set is its parameter.
+  # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system
+  # Test Config machine
+  # nixos-test = nixpkgs.lib.nixosSystem {
+  #   system = "x86_64-linux";
+  #   specialArgs = inputs;
+  #   modules = [
+  #     ./configuration.nix
+  #   ];
+  # };
+ 
+  # Main nixos config
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {  
     nixosConfigurations = {
-      # By default, NixOS will try to refer the nixosConfiguration with its hostname.
-      # so the system named `nixos-test` will use this configuration.
-      # However, the configuration name can also be specified using `sudo nixos-rebuild switch --flake /path/to/flakes/directory#<name>`.
-      # The `nixpkgs.lib.nixosSystem` function is used to build this configuration, the following attribute set is its parameter.
-      # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system
-      # Test Config machine
-     # nixos-test = nixpkgs.lib.nixosSystem {
-     #   system = "x86_64-linux";
-     #   specialArgs = inputs;
-     #   modules = [
-     #     ./configuration.nix
-     #   ];
-     # };
-      # Main nixos config
-      nixos = nixpkgs.lib.nixosSystem {
+      d3nixpc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
