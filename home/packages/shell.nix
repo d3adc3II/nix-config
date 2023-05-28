@@ -9,18 +9,19 @@
     brave
     firefox
     vscode
+    git
   ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    git
-    cachix
+  #environment.systemPackages = with pkgs; [
+  #  vim 
+  #  wget
+  #  git
+  #  cachix
     # install helix from flake input `helix`
-    helix.packages."${pkgs.system}".helix
-    gitAndTools.gitFull
-  ];
+  #  helix.packages."${pkgs.system}".helix
+  #  gitAndTools.gitFull
+  #];
 
 
 
