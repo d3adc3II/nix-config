@@ -13,6 +13,7 @@
     telegram-desktop
     discord
     zsh-powerlevel10k
+    zplug
 
     
   ];
