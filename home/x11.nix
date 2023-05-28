@@ -3,8 +3,8 @@
 {
   imports = [
     ./packages/shell.nix
-
-
+    ./packages/common.nix
+    
   ];
 
   home = {
@@ -48,6 +48,12 @@
     };
   };
 
+programs.bash.shellAliases = {
+  gac = "git add . && git commit -m";
+  gp = " git push origin"; 
+  ll = "ls -l";
+  ls = "ls --color=tty";
+}
 
   # enable starship, a beautiful shell prompt
   #programs.starship = {

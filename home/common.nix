@@ -3,15 +3,19 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [ 
-    kitty
-    alacritty
-    brave
-    firefox
-    vscode
-    obsidian
-    telegram-desktop
-    discord 
-    
+    htop
+    btop
+    nvtop
+    nnn
+    neofetch
+    aria2
+
+  # Networking tools
+    mtr 
+    iperf3
+    nmap
+    socat
+        
   ];
 
 
