@@ -9,7 +9,6 @@
     brave
     firefox
     vscode
-    git
     
   ];
 
