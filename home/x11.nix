@@ -1,4 +1,4 @@
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, home-manager, nur, ... } @args:
 
 {
   imports = [
@@ -13,7 +13,6 @@
     stateVersion = "22.11";
 
   };
-
 
   # link the configuration file in current directory to the specified location in Home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;

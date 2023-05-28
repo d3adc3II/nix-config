@@ -1,4 +1,4 @@
-{ config, pkgs, helix, ... }:
+{ config, pkgs, ... }:
 {
 
   # Packages that should be installed to the user profile. Test.
@@ -15,6 +15,7 @@
     zsh-powerlevel10k
     zplug
     oh-my-zsh
+    #fcitx5-with-addons
   ];
   #programs.zsh.zplug.enable =  true;
   #:wprograms.zsh.zsh-powerlevel10k.enable =  true;
@@ -46,11 +47,6 @@
     path = "${config.xdg.dataHome}/zsh/history";
   };
 };
-
-  # Shell configuations
-  environment.shells = with pkgs; [
-    zsh
-  ];
 
 
 }
