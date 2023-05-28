@@ -48,13 +48,6 @@
     };
   };
 
-programs.bash.shellAliases = {
-  gac = "git add . && git commit -m";
-  gp = "git push origin";
-  nrb = " sudo nixos-rebuild switch"; 
-  ll = "ls -l";
-  ls = "ls --color=tty";
-};
 
   # enable starship, a beautiful shell prompt for reference.
   #programs.starship = {
