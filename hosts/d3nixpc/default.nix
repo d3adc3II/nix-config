@@ -38,7 +38,5 @@
 
   system.stateVersion = "22.11"; # Did you read the comment?
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   }
