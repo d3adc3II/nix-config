@@ -54,7 +54,7 @@ programs.bash.shellAliases = {
   nrb = " sudo nixos-rebuild switch"; 
   ll = "ls -l";
   ls = "ls --color=tty";
-}
+};
 
   # enable starship, a beautiful shell prompt
   #programs.starship = {
