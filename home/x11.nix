@@ -6,9 +6,14 @@
 
 
   ];
-  # please change the username & home direcotry to your own
-  home.username = "d3";
-  home.homeDirectory = "/home/d3";
+
+  home = {
+    username = "d3";
+    homeDirectory = "/home/d3";
+    stateVersion = "22.11";
+
+  };
+
 
   # link the configuration file in current directory to the specified location in Home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -75,7 +80,6 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
