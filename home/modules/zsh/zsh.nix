@@ -1,9 +1,9 @@
- { config, pkgs, ... }:
+ { config, lib, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    initExtraBeforeCompInit = builtins.readFile ./zshrc;
+    dotDir = "$HOME/nix-config/home/modules/zsh/.zshrc";
     oh-my-zsh = {
       enable = true;
       theme = "superjarin";
