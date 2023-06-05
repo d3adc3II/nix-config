@@ -1,15 +1,16 @@
  { config, lib, pkgs, ... }:
 {
+  environment.pathsToLink = [ "/share/zsh" ];
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    dotDir = "$HOME/nix-config/home/modules/zsh/.zshrc";
+    #enableCompletion = truetty;
+    dotDir = ".config/zsh";
     oh-my-zsh = {
       enable = true;
       theme = "superjarin";
       plugins = [
         "direnv"
-        "zsh-autosuggestions"
+        #"zsh-autosuggestions"
         "zoxide"
         "thefuck"
       ];
