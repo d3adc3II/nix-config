@@ -3,6 +3,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    initExtraBeforeCompInit = builtins.readFile ./zshrc;
     oh-my-zsh = {
       enable = true;
       theme = "superjarin";
