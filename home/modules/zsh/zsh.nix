@@ -1,9 +1,11 @@
  { config, lib, pkgs, ... }:
 {
-  environment.pathsToLink = [ "/share/zsh" ];
+  #environment.pathsToLink = [ "/share/zsh" ];
   programs.zsh = {
     enable = true;
-    #enableCompletion = truetty;
+    enableAutosuggestion = true;
+    enableSyntaxHighlighting = true;
+    autocd = true;
     dotDir = ".config/zsh";
     oh-my-zsh = {
       enable = true;
