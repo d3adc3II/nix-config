@@ -1,7 +1,7 @@
 { config, pkgs, helix, ... }:
 {
   imports = [
-    ./modules/zsh.nix
+    ./modules/zsh/zsh.nix
     
   ];
 
