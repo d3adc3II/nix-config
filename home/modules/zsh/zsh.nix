@@ -2,25 +2,6 @@
 {
 
   # Packages that should be installed to the user profile. Test.
-  home.packages = with pkgs; [ 
-    kitty
-    alacritty
-    zsh
-    brave
-    firefox
-    vscode
-    obsidian
-    telegram-desktop
-    discord
-    zsh-powerlevel10k
-    zplug
-    oh-my-zsh
-    #fcitx5-with-addons
-    fcitx5-unikey
-    thefuck
-    zsh-autosuggestions
-    zoxide
-  ];
   #programs.zsh.zplug.enable =  true;
   #:wprograms.zsh.zsh-powerlevel10k.enable =  true;
 
@@ -59,3 +40,4 @@
 
 
 }
+ 

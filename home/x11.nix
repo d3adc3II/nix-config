@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./packages/shell.nix
-    ./packages/common.nix
+    ./common.nix
     
   ];
 
