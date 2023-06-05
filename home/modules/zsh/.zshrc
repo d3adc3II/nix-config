@@ -4,7 +4,7 @@
 zstyle ':completion:*' completer _complete _ignored _correct
 zstyle ':completion:*' format 'fd %d'
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/d3/.zshrc'
+zstyle :compinstall filename '/home/d3/nix-config/home/modules/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
