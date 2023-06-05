@@ -1,10 +1,5 @@
-{ config, pkgs, ... }:
+ { config, pkgs, ... }:
 {
-
-  # Packages that should be installed to the user profile. Test.
-  #programs.zsh.zplug.enable =  true;
-  #:wprograms.zsh.zsh-powerlevel10k.enable =  true;
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -37,7 +32,4 @@
     path = "${config.xdg.dataHome}/zsh/history";
   };
 };
-
-
 }
- 
