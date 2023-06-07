@@ -1,0 +1,19 @@
+nix-config
+ ├─ home
+ │ ├─ common.nix
+ │ ├─ wayland.nix
+ │ └─ x11.nix
+ ├─ hosts
+ │ └─ d3nixpc
+ │ │ ├─ core-desktop.nix
+ │ │ ├─ default.nix
+ │ │ ├─ hardware-configuration.nix
+ │ │ └─ user-group.nix
+ ├─ modules
+ │ ├─ hyprland
+ │ │ └─ hyprland.nix
+ │ └─ zsh
+ │ │ └─ zsh.nix
+ ├─ flake.lock
+ ├─ flake.nix
+ └─ tree.tree

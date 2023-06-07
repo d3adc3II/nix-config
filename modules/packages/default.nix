@@ -1,11 +1,5 @@
-{ config, pkgs, helix, ... }:
+{ pkgs, config, ... }:
 {
-  imports = [
-    ../modules/zsh/zsh.nix
-    
-  ];
-
-  # Packages that should be installed to the user profile.
   home.packages = with pkgs; [ 
     htop
     btop
@@ -35,7 +29,6 @@
     iperf3
     nmap
     socat
-        
   ];
 
 }

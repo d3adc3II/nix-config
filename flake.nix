@@ -14,9 +14,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # helix editor, use tag 23.05
-    helix.url = "github:helix-editor/helix/23.05";
-
   };
 
   # `outputs` are all the build result of the flake. 
@@ -56,6 +53,21 @@
           }
         ];
       };
+      d3nixpc-wayland = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
+        modules = [
+          ./hosts/d3nixpc
+          ./modules/system/core-desktop.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.d3 = import ./home/wayland.nix;
+            home-manager.extraSpecialArgs = inputs;          
+          }
+        ];
     };
   };
+};
 }
