@@ -1,4 +1,4 @@
-{ config, pkgs, helix,lib, ... }:
+{ config, pkgs, helix,lib, home-manager, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
@@ -37,6 +37,12 @@
     layout = "us";
     xkbVariant = "";
   };
+  # set cursor size and dpi for 4k monitor
+ # xresources.properties = {
+ #   "Xcursor.size" = 16;
+ #   "Xft.dpi" = 172;
+ # };
+
 
   # Enable One Drive
   services.onedrive.enable = true;
