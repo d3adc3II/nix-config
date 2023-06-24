@@ -1,11 +1,17 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 {
   home.stateVersion = "22.11";
   imports = [
-    ./packages
+    # gui
+    ./firefox
     ./zsh
-    #./xdg
-   # ./hyprland
+    ./hyprland
+    # cli 
+    ./zsh
+    ./git
+    # system 
+    ./xdg
+    ./packages
 
   ];
   # Packages that should be installed to the user profile.

@@ -23,8 +23,6 @@
     wget
     git
     cachix
-  # install helix from flake input `helix`
-    helix.packages."${pkgs.system}".helix
   #  gitAndTools.gitFull
   ];
   # Shell configuations
@@ -43,7 +41,7 @@
                 xdg-desktop-portal-wlr
                 xdg-desktop-portal-gtk
             ];
-            gtkUsePortal = true;
+  #          gtkUsePortal = true;
         };
     };
   programs.dconf.enable = true;

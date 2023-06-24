@@ -3,7 +3,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./user-group.nix
+    #./user-group.nix
   ];
 
   services.xserver.videoDrivers = ["nvidia"];  

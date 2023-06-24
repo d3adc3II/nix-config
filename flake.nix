@@ -13,7 +13,11 @@
     # Home Manager Input
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
+    
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # `outputs` are all the build result of the flake. 
@@ -37,37 +41,44 @@
   # };
  
   # Main nixos config
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {  
-    nixosConfigurations = {
-      d3nixpc = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [
-          ./hosts/d3nixpc
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.d3 = import ./home/x11.nix;
-            home-manager.extraSpecialArgs = inputs;          
-          }
-        ];
-      };
-      d3nixpc-wayland = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [
-          ./hosts/d3nixpc
-          ./modules/system/core-desktop.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.d3 = import ./home/wayland.nix;
-            home-manager.extraSpecialArgs = inputs;          
-          }
-        ];
-    };
-  };
-};
-}
+  outputs = { nixpkgs, home-manager, nur, ... }@inputs:   
+    let 
+      system = "x86_64-linux"; #current system
+      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      lib = nixpkgs.lib;
+      
+      # This lets us reuse the code to "create" a system
+      # Credits go to sioodmy on this one!
+      # https://github.com/sioodmy/dotfiles/blob/main/flake.nix
+      mkSystem = pkgs: system: hostname:
+        pkgs.lib.nixosSystem {
+          system = system;
+          modules = [
+            { networking.hostName = hostname; }
+            ./modules/system/configuration.nix
+            # General configuration (users,networking, sound, etc)
+            (./. + "/hosts/${hostname}/hardware-configuration.nix")
+            home-manger.nixosModules.home-manger
+            {
+              home-manager = {
+                useUserPackages = true;
+                useGlobalPkgs = true;
+                extraSpecialArgs = { inherit inputs; };
+                # Home manager config ( configure program like firefox,zsh, eww, etc)
+                users.notus = (./. + "/hosts/${hostname}/user.nix");
+              };
+            }            
+          ];
+          specialArgs = { inherit inputs; };
+        }; 
+        in {
+            nixosConfigurations = {
+                # Now, defining a new system is can be done in one line
+                #                                Architecture   Hostname
+                d3nixpc = mkSystem inputs.nixpkgs "x86_64-linux" "d3nixpc";
+                d3nixpcwl = mkSystem inputs.nixpkgs "x86_64-linux" "d3nixpcwl";
+            };
+        };
+  }
+
+
