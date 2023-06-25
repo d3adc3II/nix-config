@@ -1,34 +1,46 @@
-{ pkgs, config, ... }:
-{
-  home.packages = with pkgs; [ 
-    htop
-    btop
-    nvtop
-    nnn
-    neofetch
-    aria2
-    kitty
-    alacritty
-    zsh
-    brave
-    firefox
-    vscode
-    obsidian
-    telegram-desktop
-    discord
-    zsh-powerlevel10k
-    zplug
-    oh-my-zsh
-    #fcitx5-with-addons
-    fcitx5-unikey
-    thefuck
-    zsh-autosuggestions
-    zoxide
-  # Networking tools
-    mtr 
-    iperf3
-    nmap
-    socat
-  ];
+{ pkgs, lib, config, ... }:
 
+with lib;
+let cfg = 
+    config.modules.packages;
+    screen = pkgs.writeShellScriptBin "screen" ''${builtins.readFile ./screen}'';
+    bandw = pkgs.writeShellScriptBin "bandw" ''${builtins.readFile ./bandw}'';
+    maintenance = pkgs.writeShellScriptBin "maintenance" ''${builtins.readFile ./maintenance}'';
+
+in {
+    options.modules.packages = { enable = mkEnableOption "packages"; };
+    config = mkIf cfg.enable {
+    	home.packages = with pkgs; [
+            ripgrep
+            ffmpeg
+            tealdeer
+            exa
+            htop
+            fzf
+            pass
+            gnupg
+            bat
+            unzip
+            lowdown
+            zk
+            grim
+            slurp
+            slop
+            imagemagick
+            age
+            libnotify
+            git
+            python3
+            lua
+            zig 
+            mpv
+            firefox
+            pqiv
+            screen
+            bandw
+            maintenance
+            wf-recorder
+            anki-bin 
+        ];
+    };
 }
