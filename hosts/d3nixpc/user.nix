@@ -8,7 +8,7 @@
   config.modules = {
     #gui
     firefox.enable = true;
-    foot.enable = true;
+    #foot.enable = true;
     hyprland.enable = true;
     wofi.enable = true;
     #cli
