@@ -58,14 +58,14 @@
             ./modules/system/configuration.nix
             # General configuration (users,networking, sound, etc)
             (./. + "/hosts/${hostname}/hardware-configuration.nix")
-            home-manger.nixosModules.home-manger
+            home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
                 # Home manager config ( configure program like firefox,zsh, eww, etc)
-                users.notus = (./. + "/hosts/${hostname}/user.nix");
+                users.d3 = (./. + "/hosts/${hostname}/user.nix");
               };
             }            
           ];

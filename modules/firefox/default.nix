@@ -22,7 +22,7 @@ in {
             ];
 
             # Privacy about:config settings
-            profiles.notus = {
+            profiles.d3 = {
                 settings = {
                     "browser.send_pings" = false;
                     "browser.urlbar.speculativeConnect.enabled" = false;
