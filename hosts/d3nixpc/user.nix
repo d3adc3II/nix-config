@@ -7,7 +7,7 @@
   ];
   config.modules = {
     #gui
-    firefox.enable = true;
+    #firefox.enable = true;
     #foot.enable = true;
     hyprland.enable = true;
     #wofi.enable = true;
