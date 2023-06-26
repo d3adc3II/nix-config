@@ -16,7 +16,7 @@
     
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+    #  inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -54,6 +54,7 @@
         pkgs.lib.nixosSystem {
           system = system;
           modules = [
+            nur.nixosModules.nur
             { networking.hostName = hostname; }
             ./modules/system/configuration.nix
             # General configuration (users,networking, sound, etc)
