@@ -6,9 +6,9 @@ with lib;
 #in {
 #    options.modules.firefox = { enable = mkEnableOption "firefox"; };
 
-    config = mkIf cfg.enable {
-        programs.firefox = {
-            enable = true;
+#    config = mkIf cfg.enable {
+#        programs.firefox = {
+#            enable = true;
 
             # Install extensions from NUR
             extensions = with pkgs.nur.repos.rycee.firefox-addons; [
