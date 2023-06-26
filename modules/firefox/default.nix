@@ -1,17 +1,10 @@
 { inputs, lib, config, pkgs, ... }:
-{
-  imports = [
-    #./hardware-configuration.nix
-    #./user-group.nix
-    ./eww/default.nix
-  ];
-}
 with lib;
-let
-    cfg = config.modules.eww;
-
-in {
-    options.modules.firefox = { enable = mkEnableOption "firefox"; };
+#let
+#    cfg = config.modules.eww;
+#
+#in {
+#    options.modules.firefox = { enable = mkEnableOption "firefox"; };
 
     config = mkIf cfg.enable {
         programs.firefox = {
