@@ -3,9 +3,9 @@
   imports = [
     #./hardware-configuration.nix
     #./user-group.nix
-    ../../modules/default.nix
+    ./eww/default.nix
   ];
-};
+}
 with lib;
 let
     cfg = config.modules.eww;
