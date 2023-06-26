@@ -3,8 +3,8 @@ with lib;
 #let
 #    cfg = config.modules.eww;
 
-in {
-    options.modules.firefox = { enable = mkEnableOption "firefox"; };
+#in {
+#    options.modules.firefox = { enable = mkEnableOption "firefox"; };
 
     config = mkIf cfg.enable {
         programs.firefox = {
