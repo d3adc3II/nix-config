@@ -1,4 +1,9 @@
 { inputs, lib, config, pkgs, ... }:
+  imports = [
+    #./hardware-configuration.nix
+    #./user-group.nix
+    ../../modules/default.nix
+  ];
 with lib;
 let
     cfg = config.modules.eww;
