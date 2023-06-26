@@ -3,7 +3,7 @@
   home.stateVersion = "22.11";
   imports = [
     # gui
-    ./firefox
+    #./firefox
     ./zsh
     ./hyprland
     # cli 
