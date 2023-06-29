@@ -1,17 +1,21 @@
-{ config, pkgs, helix, ... }:
+{ config, ... }@args:
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./core-desktop.nix
-    ./user-group.nix
-  ];
+    ../../modules/nixos/core-desktop.nix
+    ../modules/hyprland
+    ../../modules/nixos/user-group.nix
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Networking
+
+  ];
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi"; # use the same mount point here 
+    };
+    system-boot.enable = true;
+  };
+
   networking = {
     hostName = "d3nixpc"; # Define your hostname.
     wireless.enable = false;
@@ -20,14 +24,13 @@
   # Nvidia GPU
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-  # nvidia-drm.modeset=1 is required for some wayland compositors, e.g. sway
-  hardware.nvidia.modesetting.enable = true;
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
+  hardware.nvidia = {
+  package = config.boot.kernelPackages.nvidiaPackages.beta;
+  modesetting.enable = true;
+  };
+  hardware.opengl = {
+    enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver = {

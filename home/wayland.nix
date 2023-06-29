@@ -3,6 +3,7 @@
 {
   imports = [
     ./modules/desktop
+    ./modules/hyprland
     
     
   ];
@@ -33,17 +34,7 @@
     "Xft.dpi" = 172;
   };
 
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "d3adc3II";
-    userEmail = "ph0ngdinh@proton.com";
-    aliases = {
-      ci = "commit";
-      co = "checkout";
-      s = "status";
-    };
-  };
+
 
 programs.bash.shellAliases = {
   gac = "git add . && git commit -m";
