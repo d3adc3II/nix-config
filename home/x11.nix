@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/desktop
+    ../modules/desktop
     
     
   ];
