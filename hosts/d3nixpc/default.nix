@@ -13,7 +13,7 @@
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot/efi"; # use the same mount point here 
     };
-    system-boot.enable = true;
+    systemd-boot.enable = true;
   };
 
   networking = {
