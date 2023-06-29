@@ -6,7 +6,7 @@
     enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
    # autocd = true;
-    dotDir = ".config/zsh";
+   # dotDir = ".config/zsh";
     oh-my-zsh = {
       enable = true;
       theme = "superjarin";
