@@ -5,7 +5,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
-    autocd = true;
+   # autocd = true;
     dotDir = ".config/zsh";
     oh-my-zsh = {
       enable = true;
