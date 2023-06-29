@@ -69,7 +69,7 @@
           home-manager.useUserPackages = true;
 
           home-manager.extraSpecialArgs = x64_specialArgs;
-          home-manager.users.d3 = import ./home/wayland.nix;
+          home-manager.users.d3 = import ./home/x11.nix;
         }
       ];
       d3lt_module = [
