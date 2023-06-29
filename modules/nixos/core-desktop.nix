@@ -87,7 +87,7 @@
         url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
         # you need to update this sha256 every time you update vscode insiders
         # the latest sha256 is printed in the error message of `sudo nixos-rebuild switch`
-        sha256 = "sha256:1f996x5i85zf0hpd7jx18zdqdp9nhxhf6zn83ai0njphz1dj354p";
+        sha256 = "sha256:1dbh4i60k6dm2d07dbqakygnbf09z0s0ra0cq2b2jwqnwmzz1lrn";
       });
       version = "latest";
     }))
