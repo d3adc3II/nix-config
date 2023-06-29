@@ -49,7 +49,7 @@
   # However, `self` is an exception, this special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
   # Main nixos config
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-generators ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-generators, ... }:
     let 
       x64_system = "x86_64-linux";
       x64_specialArgs = {
@@ -107,13 +107,13 @@
         let system = x64_system; specialArgs = x64_specialArgs; in  {
         d3nixpc = nixos-generators.nixosGenerate {
           inherit system specialArgs;
-          modules = d3pc_modules;
+          modules = d3pc_module;
           format = "iso";
         };
         # Hoshino Aquamarine is a virtual machine running on Proxmox VE.
         d3nixlt = nixos-generators.nixosGenerate {
           inherit system specialArgs;
-          modules = d3lt_modules;
+          modules = d3lt_module;
           format = "iso";
         };
       };
