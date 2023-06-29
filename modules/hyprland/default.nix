@@ -1,84 +1,50 @@
-{ pkgs, ... }:
-
-
+{ pkgs, ...}: 
 {
+  imports = [
+    ./wayland-apps.nix
+  ];
 
-  ##########################################################################################################
-  #
-  #  NixOS's Configuration for Hyprland Window Manager
-  #
-  #    i3wm: old and stable, only support X11
-  #    sway: compatible with i3wm, support Wayland. do not support Nvidia GPU officially.
-  #    hyprland: project starts from 2022, support Wayland, envolving fast, good looking, support Nvidia GPU.
-  #
-  ##########################################################################################################
+  # hyprland configs, based on https://github.com/notwidow/hyprland
+  home.file.".config/hypr" = {
+    source = ./hypr-conf;
+    # copy the scripts directory recursively
+    recursive = true;
+  };
+  home.file.".config/gtk-3.0" = {
+    source = ./gtk-3.0;
+    recursive = true;
+  };
+  home.file.".gtkrc-2.0".source = ./gtkrc-2.0;
+  #home.file.".config/hypr/wallpapers/wallpaper.png".source = ../wallpapers/wallpaper.png;
 
+  # allow fontconfig to discover fonts and configurations installed through home.packages
+  fonts.fontconfig.enable = true;
 
-  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
-  services.xserver = {
-    enable = true;
+  systemd.user.sessionVariables = {
+    "NIXOS_OZONE_WL" = "1"; # for any ozone-based browser & electron apps to run on wayland
+    "MOZ_ENABLE_WAYLAND" = "1"; # for firefox to run on wayland
+    "MOZ_WEBRENDER" = "1";
 
-    desktopManager = {
-      xterm.enable = false;
-    };
-
-    displayManager = {
-      defaultSession = "hyprland";
-      lightdm.enable = false;
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
-    };
+    # for hyprland with nvidia gpu, ref https://wiki.hyprland.org/Nvidia/
+    "LIBVA_DRIVER_NAME" = "nvidia";
+    "XDG_SESSION_TYPE" = "wayland";
+    "GBM_BACKEND" = "nvidia-drm";
+    "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
+    "WLR_NO_HARDWARE_CURSORS" = "1";
+    "WLR_EGL_NO_MODIFIRES" = "1";
   };
 
-  programs.hyprland = {
-    enable = true;
-
-    xwayland = {
-      enable = true;
-      hidpi = true;
-    };
-
-    nvidiaPatches = true;
+  # this is for xwayland
+  # set dpi for 4k monitor
+  xresources.properties = {
+    "Xft.dpi" = 162;
   };
-  programs.light.enable = true; # monitor backlight control
 
+  # set Xcursor.theme & Xcursor.size in ~/.Xresources automatically
+  home.pointerCursor = {
+    name = "Qogir-dark";
+    package = pkgs.qogir-theme;
+    size = 64;
+  };
 
-  # thunar file manager(part of xfce) related options
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin
-    thunar-volman
-  ];
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    waybar # the status bar
-    swaybg # the wallpaper
-    swayidle # the idle timeout
-    swaylock # locking the screen
-    wlogout # logout menu
-    wl-clipboard # copying and pasting
-
-    wf-recorder # creen recording
-    grim # taking screenshots
-    slurp # selecting a region to screenshot
-    # TODO replace by `flameshot gui --raw | wl-copy`
-
-    wofi # A rofi inspired launcher for wlroots compositors such as sway/hyprland
-    mako # the notification daemon, the same as dunst
-
-    yad # a fork of zenity, for creating dialogs
-
-    # 用于播放系统音效
-    mpd # for playing system sounds
-    mpc-cli # command-line mpd client
-    ncmpcpp # a mpd client with a UI
-    networkmanagerapplet # provide GUI app: nm-connection-editor 
-
-    xfce.thunar # xfce4's file manager
-  ];
 }

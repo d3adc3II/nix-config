@@ -31,15 +31,17 @@
     # Home Manager Input
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # modern window compositor
     hyprland.url = "github:hyprwm/Hyprland/v0.25.0";
     # community wayland nixpkgs
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
   };
+
+    # generate iso/qcow2/docker/... image from nixos configuration
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   # The `outputs` function will return all the build results of the flake. 
   # A flake can have many use cases and different types of outputs,
@@ -92,7 +94,7 @@
         d3nixlt = nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = d3lt_module;
-        }
+        };
       };
 
       formatter = {
@@ -111,7 +113,7 @@
         # Hoshino Aquamarine is a virtual machine running on Proxmox VE.
         d3nixlt = nixos-generators.nixosGenerate {
           inherit system specialArgs;
-          modules = d3lt_modules
+          modules = d3lt_modules;
           format = "iso";
         };
       };
