@@ -71,9 +71,11 @@
   hardware.pulseaudio.enable = false;
   # rtkit is optional but recommended
   security.rtkit.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  
+  #services.gnome.gnome-keyring.enable = true;
+  #security.pam.services.greetd.enableGnomeKeyring = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   environment.systemPackages = with pkgs; [
     neovim 
     wget
