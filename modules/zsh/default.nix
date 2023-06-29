@@ -31,9 +31,9 @@
 
   #home.file.".config/oh-my-zsh/themes/af-no-magic.zsh-theme".source = ./af-no-magic.zsh-theme;
   };
-  history = {
-    size = 10000;
+ # history = {
+ #   size = 10000;
   #  path = "${config.xdg.dataHome}/zsh/history";
-  };
+ # };
 };
 }
