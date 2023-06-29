@@ -3,8 +3,9 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/core-desktop.nix
-    ../../modules/hyprland
+    #../../modules/hyprland
     ../../modules/nixos/user-group.nix
+    ../../modules/zsh
 
 
   ];
