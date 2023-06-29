@@ -38,10 +38,10 @@
   };
 
     # generate iso/qcow2/docker/... image from nixos configuration
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixos-generators = {
+    #  url = "github:nix-community/nixos-generators";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
   # The `outputs` function will return all the build results of the flake. 
   # A flake can have many use cases and different types of outputs,
@@ -101,21 +101,5 @@
         x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       };
 
-      packages.x86_64-linux = 
-        # take images for idols
-        #   https://github.com/nix-community/nixos-generators
-        let system = x64_system; specialArgs = x64_specialArgs; in  {
-        d3nixpc = nixos-generators.nixosGenerate {
-          inherit system specialArgs;
-          modules = d3pc_module;
-          format = "iso";
-        };
-        # Hoshino Aquamarine is a virtual machine running on Proxmox VE.
-        d3nixlt = nixos-generators.nixosGenerate {
-          inherit system specialArgs;
-          modules = d3lt_module;
-          format = "iso";
-        };
-      };
     };
 }
