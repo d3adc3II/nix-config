@@ -3,6 +3,7 @@
 {
   imports = [
     ../modules/desktop
+    ../modules/xdg
     
     
   ];

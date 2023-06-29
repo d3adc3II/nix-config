@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ./modules/desktop
-    ./modules/hyprland
+    ../modules/desktop
+    ../modules/hyprland
+    ../modules/xdg
   ];
 
   home = {
