@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     # GUI apps
-
+    firefox
     # instant messaging
     telegram-desktop
     discord
