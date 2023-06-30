@@ -3,8 +3,8 @@
   #environment.pathsToLink = [ "/share/zsh" ];
   programs.zsh = {
     enable = true;
-    autosuggestions = enable;
-    syntaxHighlighting = enable;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
    # autocd = true;
    # dotDir = ".config/zsh";
     ohMyZsh = {
