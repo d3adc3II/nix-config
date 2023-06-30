@@ -40,7 +40,7 @@
   };
 
   # Enable CUPS to print documents.
-    services.printing.enable = true;
+    #services.printing.enable = true;
 
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -77,7 +77,7 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   environment.systemPackages = with pkgs; [
-    neovim 
+   # neovim 
     wget
     curl
     git
