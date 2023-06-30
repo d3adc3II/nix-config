@@ -25,8 +25,9 @@
   # Many ways to reference flake inputs. The most widely used is github:owner/name/reference,
   # which represents the GitHub repository URL + branch/commit-id/tag.
   # Official NixOS package source, using nixos-unstable branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home Manager Input
     home-manager.url = "github:nix-community/home-manager";
@@ -54,6 +55,7 @@
       x64_system = "x86_64-linux";
       x64_specialArgs = {
         # use unstable branch for some packages to get the latest updates
+        #pkgs-unstable = import inputs.nixpkgs-unstable {
         pkgs-unstable = import inputs.nixpkgs-unstable {
           system = x64_system; # refer the `system` parameter form outer scope recursively
           # To use chrome, we need to allow the installation of non-free software
