@@ -1,6 +1,13 @@
 { lib, pkgs, ... }:
 
 {
+    security.pam.loginLimits = [{
+    domain = "*";
+    type = "soft";
+    item = "nofile";
+    value = "4096";
+  }];
+  
   # for nix server, we do not need to keep too much generations
   boot.loader.systemd-boot.configurationLimit = lib.mkDefault 10;
   # do garbage collection weekly to keep disk usage low
