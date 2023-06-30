@@ -10,6 +10,7 @@
 
     substituters = [
       # replace official cache with a mirror located in China
+      "https://cache.nixos.org"
       "https://nix-community.cachix.org"
       "https://nixpkgs-wayland.cachix.org"
     ];
@@ -30,7 +31,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home Manager Input
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # modern window compositor
     hyprland.url = "github:hyprwm/Hyprland/v0.25.0";

@@ -3,11 +3,11 @@
   #environment.pathsToLink = [ "/share/zsh" ];
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    autosuggestions = enable;
+    syntaxHighlighting = enable;
    # autocd = true;
    # dotDir = ".config/zsh";
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       theme = "superjarin";
       plugins = [
