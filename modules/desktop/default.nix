@@ -8,11 +8,10 @@
     brave
     telegram-desktop
     discord
-    fcitx5-unikey
-    fcitx5
-    fcitx5-configtool
-    fcitx5-gtk
-    fcitx5-rime
+    #fcitx5-unikey
+    #fcitx5
+    #fcitx5-configtool
+    #fcitx5-gtk
     alacritty
     neovim
     neofetch
