@@ -2,9 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    #neofetch
     #nnn # terminal file manager
-    zsh
     brave
     telegram-desktop
     discord
@@ -12,7 +10,6 @@
     #fcitx5
     fcitx5-configtool
     fcitx5-gtk
-    alacritty
     neovim
     neofetch
     # archives
@@ -21,12 +18,16 @@
     #unzip
     #p7zip
 
+    #cli
+    alacritty
+    kitty
+    fzf
+    zsh
     # utils
     #ripgrep # recursively searches directories for a regex pattern
     #jq # A lightweight and flexible command-line JSON processor
     #yq-go # yaml processer https://github.com/mikefarah/yq
     #exa # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
     
     # networking tools
     #mtr # A network diagnostic tool

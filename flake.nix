@@ -75,8 +75,8 @@
           home-manager.users.d3 = import ./home/x11.nix;
         }
       ];
-      d3lt_module = [
-        ./hosts/d3nixlt
+      d3wl_module = [
+        ./hosts/d3nixwl
 
         home-manager.nixosModules.home-manager
         {
@@ -84,7 +84,7 @@
           home-manager.useUserPackages = true;
 
           home-manager.extraSpecialArgs = x64_specialArgs;
-          home-manager.users.d3 = import ./home/linux/server.nix;
+          home-manager.users.d3 = import ./home/wayland.nix;
         }
       ];
     in {
@@ -94,9 +94,9 @@
           modules = d3pc_module;
         };
 
-        d3nixlt = nixpkgs.lib.nixosSystem {
+        d3nixwl = nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
-          modules = d3lt_module;
+          modules = d3wl_module;
         };
       };
 

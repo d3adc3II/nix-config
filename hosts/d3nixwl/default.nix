@@ -2,7 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos/core-desktop.nix
+    ../../modules/nixos/core-desktop-wl.nix
+    ../../modules/nixos/hyprland.nix
     ../../modules/nixos/user-group.nix
     ../../modules/zsh
 
