@@ -10,6 +10,8 @@
     discord
     fcitx5-unikey
     alacritty
+    neovim
+    neofetch
     # archives
     #zip
     #xz
