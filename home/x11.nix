@@ -5,7 +5,7 @@
     ../modules/desktop
     ../modules/xdg
     ../modules/nixos/shell.nix
-    #:w../modules/fcitx5
+    ../modules/fcitx5
     
   ];
   home = {
