@@ -33,7 +33,7 @@
       # use the stable version
        package = pkgs.vscode.override {
          commandLineArgs = [
-            make it use text-input-v1, which works for kwin 5.27 and weston
+          #  make it use text-input-v1, which works for kwin 5.27 and weston
             "--enable-wayland-ime"
          ];
        };
