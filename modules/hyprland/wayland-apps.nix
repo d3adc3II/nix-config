@@ -8,7 +8,7 @@
 
     # source code: https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix
    # google-chrome = {
-      enable = true;
+    #  enable = true;
 
    #   commandLineArgs = [
         # make it use GTK_IM_MODULE if it runs with Gtk4, so fcitx5 can work with it.
@@ -22,11 +22,11 @@
    #   ];
    # };
 
-   #  brave = {
-   #    enable = true;
-   #    enableGnomeExtensions = false;
+     brave = {
+       enable = true;
+       enableGnomeExtensions = false;
       # package = pkgs.firefox-wayland; # firefox with wayland support
-   # };
+    };
 
     vscode = {
       enable = true;
