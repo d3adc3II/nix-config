@@ -1,12 +1,12 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ../modules/desktop
-    ../modules/hyprland
     ../modules/xdg
+    
+    
   ];
-
   home = {
     username = "d3";
     homeDirectory = "/home/d3";

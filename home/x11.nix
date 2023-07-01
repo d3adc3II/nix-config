@@ -4,7 +4,7 @@
   imports = [
     ../modules/desktop
     ../modules/xdg
-    
+    ../modules/nixos/shell.nix    
     
   ];
   home = {

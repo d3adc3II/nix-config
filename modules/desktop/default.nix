@@ -5,7 +5,11 @@
     #neofetch
     #nnn # terminal file manager
     zsh
-
+    brave
+    telegram-desktop
+    discord
+    fcitx5-unikey
+    alacritty
     # archives
     #zip
     #xz
@@ -17,7 +21,7 @@
     #jq # A lightweight and flexible command-line JSON processor
     #yq-go # yaml processer https://github.com/mikefarah/yq
     #exa # A modern replacement for ‘ls’
-    #fzf # A command-line fuzzy finder
+    fzf # A command-line fuzzy finder
     
     # networking tools
     #mtr # A network diagnostic tool
