@@ -1,0 +1,16 @@
+[Groups/0]
+# Group Name
+Name=Other
+# Layout
+Default Layout=us
+# Default Input Method
+DefaultIM=unikey
+
+[Groups/0/Items/0]
+# Name
+Name=unikey
+# Layout
+Layout=
+
+[GroupOrder]
+0=Other
