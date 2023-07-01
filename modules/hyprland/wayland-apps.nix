@@ -7,10 +7,10 @@
   programs = {
 
     # source code: https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix
-    google-chrome = {
+   # google-chrome = {
       enable = true;
 
-      commandLineArgs = [
+   #   commandLineArgs = [
         # make it use GTK_IM_MODULE if it runs with Gtk4, so fcitx5 can work with it.
         # (only supported by chromium/chrome at this time, not electron) 
         "--gtk-version=4"
@@ -19,27 +19,28 @@
 
         # enable hardware acceleration - vulkan api
         # "--enable-features=Vulkan"
-      ];
-    };
+   #   ];
+   # };
 
-    firefox = {
-      enable = true;
-      enableGnomeExtensions = false;
+     firefox = {
+       enable = true;
+       enableGnomeExtensions = false;
       # package = pkgs.firefox-wayland; # firefox with wayland support
     };
 
     vscode = {
       enable = true;
       # use the stable version
-      # package = pkgs.vscode.override {
-      #   commandLineArgs = [
-      #     # make it use text-input-v1, which works for kwin 5.27 and weston
-      #     # "--enable-wayland-ime"
-      #   ];
-      # };
+       package = pkgs.vscode.override {
+         commandLineArgs = [
+            make it use text-input-v1, which works for kwin 5.27 and weston
+            "--enable-wayland-ime"
+         ];
+       };
 
       # let vscode sync and update its configuration & extensions across devices, using github account.
-      # userSettings = {};
+       userSettings = {};
     };
   };
 }
+

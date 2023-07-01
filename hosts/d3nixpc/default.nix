@@ -3,7 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/core-desktop.nix
-    #../../modules/hyprland
+    ../../modules/nixos/hyprland.nix
     ../../modules/nixos/user-group.nix
     ../../modules/zsh
 
