@@ -9,7 +9,7 @@
     telegram-desktop
     discord
     fcitx5-unikey
-    fcitx5
+    #fcitx5
     fcitx5-configtool
     fcitx5-gtk
     alacritty
