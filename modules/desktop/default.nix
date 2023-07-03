@@ -12,6 +12,7 @@
     fcitx5-gtk
     neovim
     neofetch
+    git
     # archives
     #zip
     #xz
