@@ -4,7 +4,7 @@ Name=Other
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=unikey
+DefaultIM=US
 
 [Groups/0/Items/0]
 # Name
