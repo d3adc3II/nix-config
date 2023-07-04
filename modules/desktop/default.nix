@@ -13,6 +13,8 @@
     neovim
     neofetch
     git
+    flameshot
+    cava
     # archives
     #zip
     #xz

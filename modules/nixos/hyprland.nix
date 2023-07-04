@@ -50,6 +50,7 @@
     thunar-archive-plugin
     thunar-volman
   ];
+
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
@@ -57,6 +58,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     waybar # the status bar
+    #waybar-hyprland-git
     swaybg # the wallpaper
     swayidle # the idle timeout
     swaylock # locking the screen
