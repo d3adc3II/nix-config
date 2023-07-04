@@ -14,7 +14,7 @@
   programs.git = {
     enable = true;
     userName = "d3adc3II";
-    userEmail = "ph0ngdinh@proton.com";
+    userEmail = "phong.dinh@outlook.com";
    
     };
 }

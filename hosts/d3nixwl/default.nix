@@ -6,7 +6,7 @@
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/user-group.nix
     ../../modules/zsh
-    #../../modules/git
+    ../../modules/git
 
 
   ];
